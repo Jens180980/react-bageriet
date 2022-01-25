@@ -1,6 +1,8 @@
-const Navigation1 = props => {
+import styles from './nav.module.scss'
+
+const Navigation2 = props => {
 return (
-    <nav>
+    <nav className={styles.navigation}>
         <ul>
             <li><a href='/contact'>Kontakt Os</a></li>
             <li className="loginBtn">Login</li>
@@ -8,4 +10,4 @@ return (
     </nav>
 )
 }
-export default Navigation1
+export default Navigation2
