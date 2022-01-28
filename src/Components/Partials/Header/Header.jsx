@@ -7,7 +7,7 @@ return (
     <header className={styles.header}>
         <Navigation1 />
         <h1>Bageriet</h1>
-        <Navigation2 />
+        <Navigation2 changeModal={props.changeModal}/>
     </header>
 )
 }

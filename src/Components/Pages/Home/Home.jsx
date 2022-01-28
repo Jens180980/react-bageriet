@@ -2,8 +2,12 @@ import Slider from '../../Partials/Slider/Slider'
 import News from '../../Partials/News/News'
 import Newsletter from '../../Partials/Newsletter/Newsletter'
 import About from '../../Partials/About/About'
+import { useState } from 'react/cjs/react.development'
 
 const Home = (props) => {
+    
+
+
 return (
     <section>
         <Slider />
