@@ -11,7 +11,7 @@ return (
             <h3>Vi skaber lækket brød!</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, assumenda, a dolore vero ea nemo dolor dolorum impedit perferendis dolorem libero voluptatibus! Beatae, labore sed? Delectus voluptates porro ad doloribus.</p>
         </article>
-        <About />
+        <About url="https://api.mediehuset.net/bakeonline/news"/>
         <Newsletter />
         <News />
     </section>

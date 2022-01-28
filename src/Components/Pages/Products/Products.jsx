@@ -8,8 +8,8 @@ return (
             <h3>Vores elskede bagværk</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque delectus eum amet voluptate voluptas sed asperiores animi optio adipisci eius.</p>    
         </article>
-        <AsideMenu />
-        <Gallery />
+        <AsideMenu url="https://api.mediehuset.net/bakeonline/categories"/>
+        <Gallery url="https://api.mediehuset.net/bakeonline/products"/>
     </section>
 
 )
