@@ -1,5 +1,7 @@
 import styles from './login.module.scss'
 import axios from 'axios'
+import { useContext } from 'react'
+import { AuthContext } from '../../Context/AuthProvider'
 
 const Login = (props) => {
 
@@ -8,7 +10,7 @@ const Login = (props) => {
         const url = 'https://api.mediehuset.net/token'
         const result = await axios.post(url, formData)
         if(result.status){
-            sessionStorage.setItem('token', result.data.access_token)
+            sessionStorage.setItem('token', JSON.stringify(result.data))
             props.changeModal(false)
         } 
     }
