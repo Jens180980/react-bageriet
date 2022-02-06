@@ -1,12 +1,15 @@
 import styles from './login.module.scss'
 import axios from 'axios'
-import { useContext } from 'react'
-import { AuthContext } from '../../Context/AuthProvider'
+import { useForm } from 'react-hook-form'
 
-const Login = (props) => {
+export const Login = (props) => {
 
-    const login = async e => { 
+    const {register, handleSubmit, watch, formstate: { errors }} = useForm()
+
+     const login = async e => { 
         const formData = new FormData(e.target.form)
+        // formData.append('username', data.username)
+        // formData.append('password', data.password)
         const url = 'https://api.mediehuset.net/token'
         const result = await axios.post(url, formData)
         if(result.status){
@@ -21,21 +24,22 @@ const Login = (props) => {
                 <section className={styles.login}>
                     <p onClick={closeModal}>X</p>
                     <h3>Indtast brugernavn og kodeord</h3>
-                    <form method="post">
+                    <form method="post" onSubmit={handleSubmit(login)}>
                         <div>
                             <label htmlFor="username">Bruger: </label>
-                            <input type="text" id="username" name="username" />
+                            <input {...register('username', { required: true })} id="username"  />
+                            {errors.username && <span>'Indtast dit brugernavn'</span>}
                         </div>
                         <div>
                             <label htmlFor="password">Kode: </label>
-                            <input type="password" id="password" name="password" />
+                            <input {...register('password', { required: true })} type="password" id="password" />
+                            {errors.password && <span>'Indtast dit kodeord'</span>}
                         </div>
                         <div>
-                            <button onClick={login} type="button">Login: </button>
+                            <button type="submit">Login: </button>
                         </div>
+                        
                     </form>
                 </section>
         )  
 }
-
-export default Login
